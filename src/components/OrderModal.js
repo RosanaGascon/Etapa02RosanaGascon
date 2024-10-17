@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
-import '../assets/css/style.css'; 
-const OrderModal = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import React from 'react';
 
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
-
+const OrderModal = ({ orderMessage }) => {
   return (
-    <>
-      <button onClick={openModal} className="btn btn-primary">Open Modal</button>
-      {isOpen && (
-        <div id="orderModal" className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal}>×</span>
-            <div id="order-details">Order details go here...</div>
+    <div className="modal fade" id="orderModal" tabIndex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="orderModalLabel">Confirmación del Pedido</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div className="modal-body" dangerouslySetInnerHTML={{ __html: orderMessage }}></div>
+          <div className="modal-footer">
+            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
           </div>
         </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 };
 
