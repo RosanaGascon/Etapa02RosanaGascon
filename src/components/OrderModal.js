@@ -1,3 +1,4 @@
+// src/components/OrderModal.js
 import React from 'react';
 
 const OrderModal = ({ orderMessage }) => {

@@ -155,7 +155,6 @@ const MenuScript = () => {
           const modal = new window.bootstrap.Modal(document.getElementById('orderModal'));
           modal.show();
         };
-        
 
         document.getElementById("submit-order").addEventListener("click", submitOrder);
 
